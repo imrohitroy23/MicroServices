@@ -1,7 +1,9 @@
 package com.example.userService.userService.model;
 
+
+import javax.persistence.Id;
+
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,12 +12,11 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-public class Rating {
-    private String ratingId;
-    private String userId;
-    private String hotelId;
-    private int rating;
-    private String feedback;
-    private Hotel hotel;
+public class Hotel {
+    
+
+    private String id;
+    private String name;
+    private String location;
+    private String about;
 }
