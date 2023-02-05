@@ -3,6 +3,7 @@ package com.example.userService.userService.Services.Impl;
 import com.example.userService.userService.Exceptions.ResourceNotFound;
 import com.example.userService.userService.Repositories.UserRepo;
 import com.example.userService.userService.Services.UserService;
+import com.example.userService.userService.Services.External.HotelServices;
 import com.example.userService.userService.model.Hotel;
 import com.example.userService.userService.model.Rating;
 import com.example.userService.userService.model.User;
@@ -23,6 +24,8 @@ public class UserServiceImpl implements UserService {
   @Autowired
   private UserRepo userRepo;
 
+  @Autowired
+  private HotelServices hotelServices;
   @Autowired
   private RestTemplate restTemplate;
 
@@ -58,12 +61,11 @@ public class UserServiceImpl implements UserService {
       .stream()
       .map(
         rating -> {
-          ResponseEntity<Hotel> forEntity = restTemplate.getForEntity(
-            "http://HOTEL-SERVICE/hotels/" + rating.getHotelId(),
-            Hotel.class
-          );
-          Hotel hotel = forEntity.getBody();
-          logger.info("response status code: {}", forEntity.getStatusCode());
+          // ResponseEntity<Hotel> forEntity = restTemplate.getForEntity(
+          //   "http://HOTEL-SERVICE/hotels/" + rating.getHotelId(),
+          //   Hotel.class);
+          Hotel hotel = hotelServices.getHotel(rating.getHotelId());
+          // logger.info("response status code: {}", forEntity.getStatusCode());
           rating.setHotel((hotel));
           return rating;
         }
