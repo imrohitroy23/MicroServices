@@ -10,5 +10,5 @@ public interface RatingService {
   public List<Rating> getRatingByUserId(String userId);
   public List<Rating> getRatingByHotelId(String hotelId);
   
-
+  public Rating updateRating(Rating rating);
 }

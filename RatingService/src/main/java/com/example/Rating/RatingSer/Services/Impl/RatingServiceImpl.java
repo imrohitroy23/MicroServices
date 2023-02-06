@@ -39,6 +39,12 @@ public class RatingServiceImpl implements RatingService {
     return ratingRepo.findByHotelId(hotelId);
   }
 
+  @Override
+  public Rating updateRating(Rating rating) {
+    // TODO Auto-generated method stub
+    return ratingRepo.save(rating);
+  }
+
   // @Override
   // public Hotel saveUser(Hotel user) {
   //     String randomUserId=UUID.randomUUID().toString();
