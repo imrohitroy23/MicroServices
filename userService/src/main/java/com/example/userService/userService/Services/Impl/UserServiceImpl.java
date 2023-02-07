@@ -52,7 +52,7 @@ public class UserServiceImpl implements UserService {
       .findById(userId)
       .orElseThrow(() -> new ResourceNotFound("User with id not found"));
     Rating[] ratingOfUsers = restTemplate.getForObject(
-      "http://RATINGSERVICE/ratings/users/" + user.getUserId(),
+      "http://RATING-SERVICE/ratings/users/" + user.getUserId(),
       Rating[].class
     );
     logger.info("{}", ratingOfUsers);

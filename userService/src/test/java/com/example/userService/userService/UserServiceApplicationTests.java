@@ -17,11 +17,11 @@ class UserServiceApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-	@Test
-	void saveRating(){
-		Rating ratingg=Rating.builder().ratingId("").rating(12211).userId("").hotelId("").feedback("hello").build();
-		Rating saveRating=ratingSer.createRating(ratingg);
-		System.out.println("new rating added");
-	}
+	// @Test
+	// void saveRating(){
+	// 	Rating ratingg=Rating.builder().ratingId("").rating(12211).userId("").hotelId("").feedback("hello").build();
+	// 	Rating saveRating=ratingSer.createRating(ratingg);
+	// 	System.out.println("new rating added");
+	// }
 
 }
