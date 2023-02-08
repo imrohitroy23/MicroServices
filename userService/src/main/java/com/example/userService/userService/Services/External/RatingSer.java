@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 
 import com.example.userService.userService.model.Rating;
 
-@FeignClient(name="RATINGSERVICE")
+@FeignClient(name="RATING-SERVICE")
 public interface RatingSer {
     
 
